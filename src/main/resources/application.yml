@@ -1,0 +1,17 @@
+logging:
+  level:
+    root:
+      DEBUG
+    org:
+      hibernate:
+        ERROR
+      apache:
+        tomcat:
+          INFO
+        util:
+          net:
+            WARN
+      springframework:
+        boot:
+          autoconfigure:
+            ERROR
