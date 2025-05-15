@@ -38,7 +38,7 @@ public class Album {
     @OneToOne
     @JoinColumn(name = "artist_id")
     private Artist artist;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "song")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "album")
     private List<Song> songs;
 
 

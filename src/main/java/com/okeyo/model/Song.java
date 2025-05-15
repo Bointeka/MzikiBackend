@@ -1,10 +1,8 @@
 package com.okeyo.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.File;
 import java.math.BigInteger;
@@ -36,9 +34,12 @@ public class Song {
     private Time playTime;
     @Column(name = "streams")
     private BigInteger streams;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "album_id")
     private Album album;
+    @Transient
+    @JsonIgnore
     private File song;
 
 }
